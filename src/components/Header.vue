@@ -18,6 +18,7 @@ header {
   background-color: #111;
   padding: 10px;
   color: white;
+  text-align: center;
 }
 h1 {
   margin: 0;

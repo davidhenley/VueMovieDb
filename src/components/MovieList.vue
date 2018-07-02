@@ -35,4 +35,13 @@ export default {
 </script>
 
 <style scoped>
+div {
+  display: grid;
+  padding: 1rem;
+  margin: 0;
+  grid-row-gap: 1rem;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: stretch;
+  justify-items: center;
+}
 </style>
