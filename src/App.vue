@@ -1,35 +1,38 @@
 <template>
   <div id="app">
-    <Header :title="title" />
+      <Header :title="title" />
+      <MovieList />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue';
+import MovieList from './components/MovieList.vue';
 
 export default {
   name: 'app',
   data() {
     return {
-      title: 'VueMovieDb'
+      title: 'VMDb'
     };
   },
   components: {
-    Header
+    Header,
+    MovieList
   }
 };
 </script>
 
-<style scoped>
-h1 {
-  color: red;
-}
+<style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+body {
+  margin: 0;
+  padding: 0;
 }
 </style>
