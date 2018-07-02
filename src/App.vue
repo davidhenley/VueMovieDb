@@ -1,23 +1,20 @@
 <template>
   <div id="app">
-    <Header />
-    <img src="./assets/logo.png">
-    <h1>{{ hello }}</h1>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header :title="title" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
 import Header from './components/Header.vue';
 
 export default {
   name: 'app',
   data() {
-    return { hello: 'Hello World!' };
+    return {
+      title: 'VueMovieDb'
+    };
   },
   components: {
-    HelloWorld,
     Header
   }
 };
