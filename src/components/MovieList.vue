@@ -1,29 +1,34 @@
 <template>
   <div>
-    {{ movie.title }}
+    <Movie v-for="movie in movies" :key="movie.id" :movie="movie" />
   </div>
 </template>
 
 <script>
 import axios from 'axios';
 
+import Movie from './Movie.vue';
+
 export default {
   name: 'MovieList',
   data() {
     return {
-      movie: {}
+      movies: []
     };
   },
+  components: {
+    Movie
+  },
   created() {
-    this.fetchMovie();
+    this.fetchMovies();
   },
   methods: {
-    fetchMovie() {
+    fetchMovies() {
       axios
         .get(
-          'https://api.themoviedb.org/3/movie/550?api_key=7f1a05c5ac8d8c4869d31263fa7a157e'
+          'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=7f1a05c5ac8d8c4869d31263fa7a157e'
         )
-        .then(res => (this.movie = res.data));
+        .then(res => (this.movies = res.data.results));
     }
   }
 };
