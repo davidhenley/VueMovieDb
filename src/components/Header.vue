@@ -3,12 +3,6 @@
     <router-link to="/" tag="h1">
       {{ title }}
     </router-link>
-
-    <button @click="show = !show">Show/Hide</button>
-
-    <transition name="fade">
-      <h1 v-if="show">Animated</h1>
-    </transition>
   </header>
 </template>
 
@@ -35,14 +29,5 @@ header {
 h1 {
   margin: 0;
   cursor: pointer;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.3s ease;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-  transform: scale(0);
 }
 </style>

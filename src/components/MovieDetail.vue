@@ -1,12 +1,14 @@
 <template>
-  <div class="movie-wrapper" :style="styles">
-    <div class="movie-info">
-      <h1>{{ movie.title }}</h1>
-      <h3>Release Date: {{ movie.release_date }}</h3>
+  <transition name="fade">
+    <div class="movie-wrapper" :style="styles">
+      <div class="movie-info">
+        <h1>{{ movie.title }}</h1>
+        <h3>Release Date: {{ movie.release_date }}</h3>
 
-      <p>{{ movie.overview }}</p>
+        <p>{{ movie.overview }}</p>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -57,5 +59,14 @@ export default {
   padding: 2rem 10%;
   color: #222;
   text-align: center;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
 }
 </style>
