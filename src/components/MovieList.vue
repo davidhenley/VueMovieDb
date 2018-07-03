@@ -18,8 +18,30 @@ export default {
   components: {
     Movie
   },
+  beforeCreate() {
+    console.log('Before create');
+  },
   created() {
+    console.log('Created');
     this.fetchMovies();
+  },
+  beforeMount() {
+    console.log('Before mount');
+  },
+  mounted() {
+    console.log('Mounted');
+  },
+  beforeUpdate() {
+    console.log('Before update');
+  },
+  updated() {
+    console.log('Updated');
+  },
+  beforeDestroy() {
+    console.log('Before destroy');
+  },
+  destroyed() {
+    console.log('Destroyed');
   },
   methods: {
     fetchMovies() {

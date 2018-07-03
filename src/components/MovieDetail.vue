@@ -30,7 +30,7 @@ export default {
       return {
         background: `url(${BACKDROP_PATH}/${
           this.movie.backdrop_path
-        }) no-repeat`
+        }) no-repeat top center`
       };
     }
   },
@@ -56,6 +56,11 @@ export default {
 }
 .movie-info {
   background: white;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 1)
+  );
   padding: 2rem 10%;
   color: #222;
   text-align: center;
