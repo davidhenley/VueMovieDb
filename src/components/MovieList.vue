@@ -10,7 +10,6 @@ import axios from 'axios';
 import Movie from './Movie.vue';
 
 export default {
-  name: 'MovieList',
   data() {
     return {
       movies: []
