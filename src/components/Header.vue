@@ -1,6 +1,8 @@
 <template>
   <header>
-    <h1>{{ title }}</h1>
+    <router-link to="/" tag="h1">
+      {{ title }}
+    </router-link>
   </header>
 </template>
 
@@ -21,5 +23,6 @@ header {
 }
 h1 {
   margin: 0;
+  cursor: pointer;
 }
 </style>
