@@ -1,11 +1,18 @@
 <template>
-  <div>
-    {{ movie.title }}
+  <div class="movie-wrapper" :style="styles">
+    <div class="movie-info">
+      <h1>{{ movie.title }}</h1>
+      <h3>Release Date: {{ movie.release_date }}</h3>
+
+      <p>{{ movie.overview }}</p>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+
+const BACKDROP_PATH = 'https://image.tmdb.org/t/p/w1280';
 
 export default {
   data() {
@@ -15,6 +22,15 @@ export default {
   },
   created() {
     this.fetchMovie();
+  },
+  computed: {
+    styles() {
+      return {
+        background: `url(${BACKDROP_PATH}/${
+          this.movie.backdrop_path
+        }) no-repeat`
+      };
+    }
   },
   methods: {
     fetchMovie() {
@@ -31,7 +47,15 @@ export default {
 </script>
 
 <style scoped>
-div {
-  color: white;
+.movie-wrapper {
+  position: relative;
+  padding-top: 50vh;
+  background-size: cover !important;
+}
+.movie-info {
+  background: white;
+  padding: 2rem 10%;
+  color: #222;
+  text-align: center;
 }
 </style>
